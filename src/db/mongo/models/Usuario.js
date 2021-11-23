@@ -1,4 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+
+require('../mongoo')
 
 const Usuario = mongoose.model('Usuario', {
     nombre: {
@@ -26,7 +28,14 @@ const Usuario = mongoose.model('Usuario', {
     isAdmin:{
         type : Boolean,
         require : true,
-    }
+    },
+    reservas:[
+        {
+            idComputador : {
+                type : Number
+            }
+        }
+    ]
 })
 
 

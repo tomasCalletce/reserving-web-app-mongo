@@ -21,11 +21,11 @@ router.post('/registrate', async (req, res) => {
    
     try{
         usuario.save().then((su)=>{
-            res.status(200)
+            res.send(true)
             console.log(su)
         }).catch((e)=>{
             console.log(e)
-            res.send(404)
+            res.send(false)
         })
         
     }catch{

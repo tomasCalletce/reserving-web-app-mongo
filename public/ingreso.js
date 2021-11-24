@@ -16,7 +16,7 @@ loginButon.addEventListener('click', async (event) => {
         }else if(info == false){
             location.href = "/Main"
         }else{
-            location.href = "/registro"
+            alert("Este usuario no existe: registrate para continuar")
         }
     }).catch((err)=>{
         console.log(err)

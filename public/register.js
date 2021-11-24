@@ -18,7 +18,7 @@ botonRegistro.addEventListener('click', async (event) => {
         confirmarPassword: confirmarPassword.value,
         nombre : nombre.value
     })
-    console.log(data)
+    location.href = "http://localhost:3000/login"
 })
 
 ingreso.onclick = () => {

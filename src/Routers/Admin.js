@@ -64,21 +64,27 @@ router.post('/crearAula', async(req, res) => {
 })
 router.post('/crearAsistenteTecnico', async(req, res) => {
     const info = req.body;
-    const asistente = new AsistenteTecnico({
-        ...info
-    })
-    
+    console.log(info)
+
     try {
+
+        const asistenteExiste = await AsistenteTecnico.find({idAsistente : info.idAsistente})
+        const size = asistenteExiste.length;
+
+        const asistente = new AsistenteTecnico({
+            ...info
+        })
+
         asistente.save().then((su)=>{
-            res.status(200)
+            res.send(true)
             console.log(su)
         }).catch((e)=>{
             console.log(e)
-            res.send(404)
+            res.send(false)
         })
     } catch (error) {
         console.log(error)
-        res.status(404)
+        res.send(false)
     }
 
    

@@ -19,7 +19,7 @@ const admin = require('./Routers/Admin')
 //env variables
 
 require('dotenv').config();
-const port = process.env.PORT || 3000
+const port = 3004
 
 
 app.use(express.json())

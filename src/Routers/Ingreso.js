@@ -15,11 +15,16 @@ router.get('/login', (req, res) => {
 
  router.post('/auth',async (req, res) => {
     const user = req.body
+
+    console.log(user)
     try{
         const usuario = await Usuario.findOne({
             email : user.username,
             pasword : user.password
         })
+
+        console.log(usuario)
+        
         if(usuario.isAdmin){
             res.send(true)
         }else if(!usuario.isAdmin){
